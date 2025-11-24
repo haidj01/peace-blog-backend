@@ -44,19 +44,19 @@ src/main/java/org/peace/blog/
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/posts` | 모든 게시글 조회 |
-| GET | `/api/posts/{id}` | 특정 게시글 조회 |
-| POST | `/api/posts` | 게시글 작성 |
-| PUT | `/api/posts/{id}` | 게시글 수정 |
-| DELETE | `/api/posts/{id}` | 게시글 삭제 |
-| GET | `/api/posts/count` | 게시글 개수 조회 |
+| GET | `/peace-blog/posts` | 모든 게시글 조회 |
+| GET | `/peace-blog/posts/{id}` | 특정 게시글 조회 |
+| POST | `/peace-blog/posts` | 게시글 작성 |
+| PUT | `/peace-blog/posts/{id}` | 게시글 수정 |
+| DELETE | `/peace-blog/posts/{id}` | 게시글 삭제 |
+| GET | `/peace-blog/posts/count` | 게시글 개수 조회 |
 
 ### 이미지 API
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/images/upload` | 이미지 업로드 (Mock) |
-| POST | `/api/images/upload/base64` | Base64 이미지 업로드 (Mock) |
+| POST | `/peace-blog/images/upload` | 이미지 업로드 (Mock) |
+| POST | `/peace-blog/images/upload/base64` | Base64 이미지 업로드 (Mock) |
 
 ## 🏃 실행 방법
 
@@ -90,7 +90,7 @@ java -jar build/libs/peace-blog-backend-0.0.1-SNAPSHOT.jar
 ### 3. 서버 확인
 
 ```bash
-http://localhost:8080/api/posts
+http://localhost:8080/peace-blog/posts
 ```
 
 성공 시 초기 Mock 게시글 3개가 JSON으로 반환됩니다.
@@ -99,17 +99,17 @@ http://localhost:8080/api/posts
 
 ### 1. 모든 게시글 조회
 ```bash
-curl http://localhost:8080/api/posts
+curl http://localhost:8080/peace-blog/posts
 ```
 
 ### 2. 특정 게시글 조회
 ```bash
-curl http://localhost:8080/api/posts/1
+curl http://localhost:8080/peace-blog/posts/1
 ```
 
 ### 3. 게시글 작성
 ```bash
-curl -X POST http://localhost:8080/api/posts \
+curl -X POST http://localhost:8080/peace-blog/posts \
   -H "Content-Type: application/json" \
   -d '{
     "title": "새 게시글",
@@ -120,7 +120,7 @@ curl -X POST http://localhost:8080/api/posts \
 
 ### 4. 게시글 수정
 ```bash
-curl -X PUT http://localhost:8080/api/posts/1 \
+curl -X PUT http://localhost:8080/peace-blog/posts/1 \
   -H "Content-Type: application/json" \
   -d '{
     "title": "수정된 제목",
@@ -131,12 +131,12 @@ curl -X PUT http://localhost:8080/api/posts/1 \
 
 ### 5. 게시글 삭제
 ```bash
-curl -X DELETE http://localhost:8080/api/posts/1
+curl -X DELETE http://localhost:8080/peace-blog/posts/1
 ```
 
 ### 6. 이미지 업로드 (Mock)
 ```bash
-curl -X POST http://localhost:8080/api/images/upload \
+curl -X POST http://localhost:8080/peace-blog/images/upload \
   -F "file=@/path/to/image.jpg"
 ```
 

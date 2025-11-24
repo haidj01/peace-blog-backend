@@ -36,15 +36,15 @@ public class PeaceBlogApplication {
         log.info("=================================================");
         log.info("Peace Blog Backend is ready!");
         log.info("Server running on: http://localhost:8080");
-        log.info("API Base Path: http://localhost:8080/api");
+        log.info("API Base Path: http://localhost:8080/peace-blog");
         log.info("=================================================");
         log.info("Available Endpoints:");
-        log.info("  GET    /api/posts           - 모든 게시글 조회");
-        log.info("  GET    /api/posts/{id}      - 특정 게시글 조회");
-        log.info("  POST   /api/posts           - 게시글 작성");
-        log.info("  PUT    /api/posts/{id}      - 게시글 수정");
-        log.info("  DELETE /api/posts/{id}      - 게시글 삭제");
-        log.info("  POST   /api/images/upload   - 이미지 업로드");
+        log.info("  GET    /peace-blog/posts           - 모든 게시글 조회");
+        log.info("  GET    /peace-blog/posts/{id}      - 특정 게시글 조회");
+        log.info("  POST   /peace-blog/posts           - 게시글 작성");
+        log.info("  PUT    /peace-blog/posts/{id}      - 게시글 수정");
+        log.info("  DELETE /peace-blog/posts/{id}      - 게시글 삭제");
+        log.info("  POST   /peace-blog/images/upload   - 이미지 업로드");
         log.info("=================================================");
     }
 }

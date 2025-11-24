@@ -7,7 +7,26 @@ spring:
   
   # WebFlux 설정
   webflux:
-    base-path: /api
+    base-path: /peace-blog
+  # R2DBC 설정
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/peace_blog
+    username:
+    password:
+
+  # 이메일 설정 (Gmail 예시)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 
 # CORS 설정 (프론트엔드 연결용)
 cors:
@@ -15,6 +34,7 @@ cors:
     - http://localhost:3000
     - http://localhost:3001
     - https://peace.org
+
   allowed-methods:
     - GET
     - POST
@@ -30,3 +50,14 @@ logging:
   level:
     org.peace.blog: DEBUG
     org.springframework.web: INFO
+
+
+
+
+
+
+
+# JWT 설정
+jwt:
+  secret: your-secret-key-min-256-bits-change-in-production
+  expiration: 10800000  # 3시간 (밀리초)

@@ -1,0 +1,27 @@
+# application.yml 설정 예시
+
+spring:
+  # R2DBC 설정
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/peace_blog
+    username: your_db_user
+    password: your_db_password
+  
+  # 이메일 설정 (Gmail 예시)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-app-password  # Gmail 앱 비밀번호
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+# JWT 설정
+jwt:
+  secret: your-secret-key-min-256-bits-change-in-production
+  expiration: 10800000  # 3시간 (밀리초)

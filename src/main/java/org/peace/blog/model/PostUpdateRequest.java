@@ -1,7 +1,6 @@
 package org.peace.blog.model;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,14 +8,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 게시글 생성 요청 DTO
- * 클라이언트로부터 받는 게시글 작성 데이터
+ * 게시글 수정 요청 DTO
+ * 클라이언트로부터 받는 게시글 수정 데이터
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PostCreateRequest {
+public class PostUpdateRequest {
 
     /**
      * 게시글 제목 (필수, 1-255자)
@@ -37,17 +36,6 @@ public class PostCreateRequest {
     private String summary;
 
     /**
-     * 작성자 username (필수)
-     */
-    @NotBlank(message = "작성자 username은 필수입니다")
-    private String username;
-
-    /**
-     * 게시글 상태 (선택, 기본값: DRAFT)
-     */
-    private String status;
-
-    /**
      * 카테고리 (선택)
      */
     private String category;
@@ -58,7 +46,7 @@ public class PostCreateRequest {
     private String[] tags;
 
     /**
-     * 댓글 허용 여부 (선택, 기본값: true)
+     * 댓글 허용 여부 (선택)
      */
     private Boolean commentEnabled;
 }
