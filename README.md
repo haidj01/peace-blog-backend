@@ -254,4 +254,4 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 ## 📄 라이선스
 
 MIT License
-- DJ -
+
