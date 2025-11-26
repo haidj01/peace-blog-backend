@@ -57,6 +57,7 @@ public class PostController {
 
         return postService.getPostById(id)
                 .map(ResponseEntity::ok)
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()))
                 .onErrorResume(error -> {
                     log.error("Error getting post: {}", id, error);
                     return Mono.just(ResponseEntity.notFound().build());

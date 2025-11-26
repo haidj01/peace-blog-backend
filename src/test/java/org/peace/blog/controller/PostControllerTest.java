@@ -1,8 +1,7 @@
 package org.peace.blog.controller;
 
 import org.junit.jupiter.api.Test;
-import org.peace.blog.model.Post;
-import org.peace.blog.model.PostCreateRequest;
+import org.peace.blog.entity.Post;
 import org.peace.blog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
@@ -82,17 +81,17 @@ class PostControllerTest {
     @Test
     void createPost_WithValidRequest_ShouldReturnCreatedPost() {
         // Given
-        PostCreateRequest request = PostCreateRequest.builder()
+        Post request = Post.builder()
                 .title("새 게시글")
                 .content("게시글 내용")
-                .author("작성자")
+                .username("작성자")
                 .build();
-        
+
         Post createdPost = createMockPost(1L, "새 게시글");
-        
-        when(postService.createPost(any(PostCreateRequest.class)))
+
+        when(postService.createPost(any(Post.class)))
                 .thenReturn(Mono.just(createdPost));
-        
+
         // When & Then
         webTestClient.post()
                 .uri("/posts")
@@ -125,7 +124,7 @@ class PostControllerTest {
                 .id(id)
                 .title(title)
                 .content("테스트 내용")
-                .author("테스트 작성자")
+                .username("테스트 작성자")
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .build();
