@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    // tools {
-    //     gradle 'Gradle 8.5'
-    //     jdk 'JDK 17'
-    // }
+    tools {
+        gradle 'Gradle 8.5'
+        jdk 'JDK 17'
+    }
 
     environment {
         DOCKER_IMAGE = 'peace-blog-backend'
